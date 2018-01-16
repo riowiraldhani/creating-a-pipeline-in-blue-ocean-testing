@@ -5,12 +5,14 @@ pipeline {
       steps {
         echo 'Hello world!'
         echo "The value of my GitHub personal access token is $GITHUB_ACCESS_TOKEN"
-        echo "The value of my GitHub personal access token is $GIT_SSH_KEY"
+        echo "The value of 'alex-ssh-key-global' is $TEST_USER_GLOBAL"
+        echo "The value of 'alex-ssh-key-global' is $ALEX_SSH_KEY_GLOBAL"
       }
     }
   }
   environment {
     GITHUB_ACCESS_TOKEN = credentials('github')
-    GIT_SSH_KEY = credentials('jenkins-generated-ssh-key')
+    TEST_USER_GLOBAL = credentials('test-user-global')
+    ALEX_SSH_KEY_GLOBAL = credentials('alex-ssh-key-global')
   }
 }
