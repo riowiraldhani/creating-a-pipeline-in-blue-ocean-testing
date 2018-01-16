@@ -13,6 +13,5 @@ pipeline {
   environment {
     GITHUB_ACCESS_TOKEN = credentials('github')
     TEST_USER_GLOBAL = credentials('test-user-global')
-    ALEX_SSH_KEY_GLOBAL = credentials('alex-ssh-key-global')
   }
 }
