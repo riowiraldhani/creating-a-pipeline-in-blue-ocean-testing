@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Hello world!'
         echo "The value of my GitHub personal access token is $GITHUB_ACCESS_TOKEN"
-        echo "The value of 'alex-ssh-key-global' is $TEST_USER_GLOBAL"
+        echo "The value of 'test-user-global' is $TEST_USER_GLOBAL"
         echo "The value of 'alex-ssh-key-global' is $ALEX_SSH_KEY_GLOBAL"
       }
     }
