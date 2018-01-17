@@ -8,7 +8,7 @@ pipeline {
         echo "The value of 'test-user-globaL' is $TEST_USER_GLOBAL"
         echo "The value of 'secret-text-globaL' is $SECRET_TEXT_GLOBAL"
         echo "The value of 'secret-file-global' is $SECRET_FILE_GLOBAL"
-        withCredentials(bindings: [certificate(credentialsId: 'certificate-global', keystoreVariable: 'CERTIFICATE_GLOBAL', passwordVariable: 'test')]) {
+        withCredentials(bindings: [certificate(credentialsId: 'certificate-global', keystoreVariable: 'CERTIFICATE_GLOBAL')]) {
           echo "The value of 'certificate-global' is $CERTIFICATE_GLOBAL"
         }
         
