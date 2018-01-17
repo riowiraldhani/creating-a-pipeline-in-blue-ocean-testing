@@ -9,13 +9,13 @@ pipeline {
         echo "The value of 'secret-text-globaL' is $SECRET_TEXT_GLOBAL"
         echo "The value of 'secret-file-global' is $SECRET_FILE_GLOBAL"
         withCredentials(bindings: [sshUserPrivateKey(credentialsId: 'jenkins-ssh-key-for-xyz', \
-                                                                   keyFileVariable: 'SSH_KEY_FOR_XYZ')]) {
+                                                                                   keyFileVariable: 'SSH_KEY_FOR_XYZ')]) {
           echo "The value of 'jenkins-ssh-key-for-xyz' is $SSH_KEY_FOR_XYZ"
         }
         
         withCredentials(bindings: [certificate(credentialsId: 'jenkins-certificate-for-xyz', \
-                                                             keystoreVariable: 'CERTIFICATE_FOR_XYZ',
-                                                             passwordVariable: 'test')]) {
+                                                                             keystoreVariable: 'CERTIFICATE_FOR_XYZ',
+                                                                             passwordVariable: 'test')]) {
           echo "The value of 'jenkins-certificate-for-xyz' is $CERTIFICATE_FOR_XYZ"
         }
         
@@ -32,7 +32,7 @@ pipeline {
   }
   environment {
     GITHUB_ACCESS_TOKEN = credentials('github')
-    ALEX_USERNAME_AND_PASSWORD_GLOBAL = credentials('alex-username-and-password-global')
+    ALEX_USERNAME_AND_PASSWORD = credentials('alex-username-and-password')
     SECRET_TEXT_GLOBAL = credentials('secret-text-global')
     SECRET_FILE_GLOBAL = credentials('secret-file-global')
   }
